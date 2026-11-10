@@ -11,45 +11,51 @@
   <h1>Recommendations for Newcomers</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
+<br />
+
+<div class="sectionContainer">
+  <div class="leftContainer">
+    <div class="sectionLabelContainer glass verticalAlign">
+      <b>The Original Series</b>
+      <b>(TOS)</b>
+      <br />
+      <img src="/tos_logo.svg" class="seriesIcon" alt="Original Series logo" />
+    </div>
+  </div>
+  <div class="rightContainer">
+    <ng-container *ngFor="let episode of episodes">
+      <app-item-container *ngIf="episode.category === 'TOS Newcomer'" [episodeData]="episode"></app-item-container>
+    </ng-container>
+  </div>
+</div>
+
 <br /><br />
 
 <div class="sectionContainer">
   <div class="leftContainer">
-    <div class="sectionLabelContainer glass">TOS</div>
+    <div class="sectionLabelContainer glass verticalAlign">
+      <b>The Next Generation</b>
+      <b>(TNG)</b>
+      <br />
+      <img src="/tng_logo.webp" class="seriesIcon" alt="Original Series logo" />
+    </div>
   </div>
   <div class="rightContainer">
-    <p class="glass">Tits</p>
-    <p class="glass">Tits</p>
-    <p class="glass">Tits</p>
+    <app-item-container></app-item-container>
+    <app-item-container></app-item-container>
+    <app-item-container></app-item-container>
+    <app-item-container></app-item-container>
+    <app-item-container></app-item-container>
   </div>
-
 </div>
 
+<br /><br /><br />
 
 <div class="contentContainer glass">
-  <h2>The Original Series</h2>
+  <h1>The Original Series Notable Episodes</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
 </div>
 <br />
 
-  <app-item-container></app-item-container>
 
-
-<div class="contentContainer glass">
-  <h2>The Original Series</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-  <h2>The Next Generation</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-  <h2>Feature Films</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-  <h2>Deep Space Nine</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-  <h2>Voyager</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-</div>
+<br /><br /><br />

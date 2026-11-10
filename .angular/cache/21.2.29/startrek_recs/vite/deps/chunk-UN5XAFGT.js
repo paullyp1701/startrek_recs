@@ -1,34 +1,32 @@
-var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b ||= {})
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-var __objRest = (source, exclude) => {
-  var target = {};
-  for (var prop in source)
-    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
-      target[prop] = source[prop];
-  if (source != null && __getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(source)) {
-      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
-        target[prop] = source[prop];
-    }
-  return target;
-};
+import {
+  EMPTY_SUBSCRIPTION,
+  SafeSubscriber,
+  Subscriber,
+  Subscription,
+  __asyncGenerator,
+  __asyncValues,
+  __await,
+  __awaiter,
+  __extends,
+  __generator,
+  __read,
+  __spreadArray,
+  __spreadProps,
+  __spreadValues,
+  __values,
+  arrRemove,
+  config,
+  createErrorClass,
+  createOperatorSubscriber,
+  errorContext,
+  hasLift,
+  isFunction,
+  isSubscription,
+  map,
+  noop,
+  operate,
+  reportUnhandledError
+} from "./chunk-ZIQ3KHMM.js";
 
 // node_modules/@angular/core/fesm2022/_effect-chunk.mjs
 var activeConsumer = null;
@@ -423,646 +421,6 @@ function runEffect(node) {
   }
 }
 
-// node_modules/tslib/tslib.es6.mjs
-var extendStatics = function(d, b) {
-  extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-    d2.__proto__ = b2;
-  } || function(d2, b2) {
-    for (var p in b2) if (Object.prototype.hasOwnProperty.call(b2, p)) d2[p] = b2[p];
-  };
-  return extendStatics(d, b);
-};
-function __extends(d, b) {
-  if (typeof b !== "function" && b !== null)
-    throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-  extendStatics(d, b);
-  function __() {
-    this.constructor = d;
-  }
-  d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-function __awaiter(thisArg, _arguments, P, generator) {
-  function adopt(value) {
-    return value instanceof P ? value : new P(function(resolve) {
-      resolve(value);
-    });
-  }
-  return new (P || (P = Promise))(function(resolve, reject) {
-    function fulfilled(value) {
-      try {
-        step(generator.next(value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-    function rejected(value) {
-      try {
-        step(generator["throw"](value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-    function step(result) {
-      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-    }
-    step((generator = generator.apply(thisArg, _arguments || [])).next());
-  });
-}
-function __generator(thisArg, body) {
-  var _ = { label: 0, sent: function() {
-    if (t[0] & 1) throw t[1];
-    return t[1];
-  }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
-  return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() {
-    return this;
-  }), g;
-  function verb(n) {
-    return function(v) {
-      return step([n, v]);
-    };
-  }
-  function step(op) {
-    if (f) throw new TypeError("Generator is already executing.");
-    while (g && (g = 0, op[0] && (_ = 0)), _) try {
-      if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-      if (y = 0, t) op = [op[0] & 2, t.value];
-      switch (op[0]) {
-        case 0:
-        case 1:
-          t = op;
-          break;
-        case 4:
-          _.label++;
-          return { value: op[1], done: false };
-        case 5:
-          _.label++;
-          y = op[1];
-          op = [0];
-          continue;
-        case 7:
-          op = _.ops.pop();
-          _.trys.pop();
-          continue;
-        default:
-          if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
-            _ = 0;
-            continue;
-          }
-          if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
-            _.label = op[1];
-            break;
-          }
-          if (op[0] === 6 && _.label < t[1]) {
-            _.label = t[1];
-            t = op;
-            break;
-          }
-          if (t && _.label < t[2]) {
-            _.label = t[2];
-            _.ops.push(op);
-            break;
-          }
-          if (t[2]) _.ops.pop();
-          _.trys.pop();
-          continue;
-      }
-      op = body.call(thisArg, _);
-    } catch (e) {
-      op = [6, e];
-      y = 0;
-    } finally {
-      f = t = 0;
-    }
-    if (op[0] & 5) throw op[1];
-    return { value: op[0] ? op[1] : void 0, done: true };
-  }
-}
-function __values(o) {
-  var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-  if (m) return m.call(o);
-  if (o && typeof o.length === "number") return {
-    next: function() {
-      if (o && i >= o.length) o = void 0;
-      return { value: o && o[i++], done: !o };
-    }
-  };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-}
-function __read(o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o), r, ar = [], e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = { error };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-}
-function __spreadArray(to, from2, pack) {
-  if (pack || arguments.length === 2) for (var i = 0, l = from2.length, ar; i < l; i++) {
-    if (ar || !(i in from2)) {
-      if (!ar) ar = Array.prototype.slice.call(from2, 0, i);
-      ar[i] = from2[i];
-    }
-  }
-  return to.concat(ar || Array.prototype.slice.call(from2));
-}
-function __await(v) {
-  return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-function __asyncGenerator(thisArg, _arguments, generator) {
-  if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-  var g = generator.apply(thisArg, _arguments || []), i, q = [];
-  return i = Object.create((typeof AsyncIterator === "function" ? AsyncIterator : Object).prototype), verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function() {
-    return this;
-  }, i;
-  function awaitReturn(f) {
-    return function(v) {
-      return Promise.resolve(v).then(f, reject);
-    };
-  }
-  function verb(n, f) {
-    if (g[n]) {
-      i[n] = function(v) {
-        return new Promise(function(a, b) {
-          q.push([n, v, a, b]) > 1 || resume(n, v);
-        });
-      };
-      if (f) i[n] = f(i[n]);
-    }
-  }
-  function resume(n, v) {
-    try {
-      step(g[n](v));
-    } catch (e) {
-      settle(q[0][3], e);
-    }
-  }
-  function step(r) {
-    r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
-  }
-  function fulfill(value) {
-    resume("next", value);
-  }
-  function reject(value) {
-    resume("throw", value);
-  }
-  function settle(f, v) {
-    if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
-  }
-}
-function __asyncValues(o) {
-  if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-  var m = o[Symbol.asyncIterator], i;
-  return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
-    return this;
-  }, i);
-  function verb(n) {
-    i[n] = o[n] && function(v) {
-      return new Promise(function(resolve, reject) {
-        v = o[n](v), settle(resolve, reject, v.done, v.value);
-      });
-    };
-  }
-  function settle(resolve, reject, d, v) {
-    Promise.resolve(v).then(function(v2) {
-      resolve({ value: v2, done: d });
-    }, reject);
-  }
-}
-
-// node_modules/rxjs/dist/esm5/internal/util/isFunction.js
-function isFunction(value) {
-  return typeof value === "function";
-}
-
-// node_modules/rxjs/dist/esm5/internal/util/createErrorClass.js
-function createErrorClass(createImpl) {
-  var _super = function(instance) {
-    Error.call(instance);
-    instance.stack = new Error().stack;
-  };
-  var ctorFunc = createImpl(_super);
-  ctorFunc.prototype = Object.create(Error.prototype);
-  ctorFunc.prototype.constructor = ctorFunc;
-  return ctorFunc;
-}
-
-// node_modules/rxjs/dist/esm5/internal/util/UnsubscriptionError.js
-var UnsubscriptionError = createErrorClass(function(_super) {
-  return function UnsubscriptionErrorImpl(errors) {
-    _super(this);
-    this.message = errors ? errors.length + " errors occurred during unsubscription:\n" + errors.map(function(err, i) {
-      return i + 1 + ") " + err.toString();
-    }).join("\n  ") : "";
-    this.name = "UnsubscriptionError";
-    this.errors = errors;
-  };
-});
-
-// node_modules/rxjs/dist/esm5/internal/util/arrRemove.js
-function arrRemove(arr, item) {
-  if (arr) {
-    var index = arr.indexOf(item);
-    0 <= index && arr.splice(index, 1);
-  }
-}
-
-// node_modules/rxjs/dist/esm5/internal/Subscription.js
-var Subscription = (function() {
-  function Subscription2(initialTeardown) {
-    this.initialTeardown = initialTeardown;
-    this.closed = false;
-    this._parentage = null;
-    this._finalizers = null;
-  }
-  Subscription2.prototype.unsubscribe = function() {
-    var e_1, _a, e_2, _b;
-    var errors;
-    if (!this.closed) {
-      this.closed = true;
-      var _parentage = this._parentage;
-      if (_parentage) {
-        this._parentage = null;
-        if (Array.isArray(_parentage)) {
-          try {
-            for (var _parentage_1 = __values(_parentage), _parentage_1_1 = _parentage_1.next(); !_parentage_1_1.done; _parentage_1_1 = _parentage_1.next()) {
-              var parent_1 = _parentage_1_1.value;
-              parent_1.remove(this);
-            }
-          } catch (e_1_1) {
-            e_1 = { error: e_1_1 };
-          } finally {
-            try {
-              if (_parentage_1_1 && !_parentage_1_1.done && (_a = _parentage_1.return)) _a.call(_parentage_1);
-            } finally {
-              if (e_1) throw e_1.error;
-            }
-          }
-        } else {
-          _parentage.remove(this);
-        }
-      }
-      var initialFinalizer = this.initialTeardown;
-      if (isFunction(initialFinalizer)) {
-        try {
-          initialFinalizer();
-        } catch (e) {
-          errors = e instanceof UnsubscriptionError ? e.errors : [e];
-        }
-      }
-      var _finalizers = this._finalizers;
-      if (_finalizers) {
-        this._finalizers = null;
-        try {
-          for (var _finalizers_1 = __values(_finalizers), _finalizers_1_1 = _finalizers_1.next(); !_finalizers_1_1.done; _finalizers_1_1 = _finalizers_1.next()) {
-            var finalizer = _finalizers_1_1.value;
-            try {
-              execFinalizer(finalizer);
-            } catch (err) {
-              errors = errors !== null && errors !== void 0 ? errors : [];
-              if (err instanceof UnsubscriptionError) {
-                errors = __spreadArray(__spreadArray([], __read(errors)), __read(err.errors));
-              } else {
-                errors.push(err);
-              }
-            }
-          }
-        } catch (e_2_1) {
-          e_2 = { error: e_2_1 };
-        } finally {
-          try {
-            if (_finalizers_1_1 && !_finalizers_1_1.done && (_b = _finalizers_1.return)) _b.call(_finalizers_1);
-          } finally {
-            if (e_2) throw e_2.error;
-          }
-        }
-      }
-      if (errors) {
-        throw new UnsubscriptionError(errors);
-      }
-    }
-  };
-  Subscription2.prototype.add = function(teardown) {
-    var _a;
-    if (teardown && teardown !== this) {
-      if (this.closed) {
-        execFinalizer(teardown);
-      } else {
-        if (teardown instanceof Subscription2) {
-          if (teardown.closed || teardown._hasParent(this)) {
-            return;
-          }
-          teardown._addParent(this);
-        }
-        (this._finalizers = (_a = this._finalizers) !== null && _a !== void 0 ? _a : []).push(teardown);
-      }
-    }
-  };
-  Subscription2.prototype._hasParent = function(parent) {
-    var _parentage = this._parentage;
-    return _parentage === parent || Array.isArray(_parentage) && _parentage.includes(parent);
-  };
-  Subscription2.prototype._addParent = function(parent) {
-    var _parentage = this._parentage;
-    this._parentage = Array.isArray(_parentage) ? (_parentage.push(parent), _parentage) : _parentage ? [_parentage, parent] : parent;
-  };
-  Subscription2.prototype._removeParent = function(parent) {
-    var _parentage = this._parentage;
-    if (_parentage === parent) {
-      this._parentage = null;
-    } else if (Array.isArray(_parentage)) {
-      arrRemove(_parentage, parent);
-    }
-  };
-  Subscription2.prototype.remove = function(teardown) {
-    var _finalizers = this._finalizers;
-    _finalizers && arrRemove(_finalizers, teardown);
-    if (teardown instanceof Subscription2) {
-      teardown._removeParent(this);
-    }
-  };
-  Subscription2.EMPTY = (function() {
-    var empty2 = new Subscription2();
-    empty2.closed = true;
-    return empty2;
-  })();
-  return Subscription2;
-})();
-var EMPTY_SUBSCRIPTION = Subscription.EMPTY;
-function isSubscription(value) {
-  return value instanceof Subscription || value && "closed" in value && isFunction(value.remove) && isFunction(value.add) && isFunction(value.unsubscribe);
-}
-function execFinalizer(finalizer) {
-  if (isFunction(finalizer)) {
-    finalizer();
-  } else {
-    finalizer.unsubscribe();
-  }
-}
-
-// node_modules/rxjs/dist/esm5/internal/config.js
-var config = {
-  onUnhandledError: null,
-  onStoppedNotification: null,
-  Promise: void 0,
-  useDeprecatedSynchronousErrorHandling: false,
-  useDeprecatedNextContext: false
-};
-
-// node_modules/rxjs/dist/esm5/internal/scheduler/timeoutProvider.js
-var timeoutProvider = {
-  setTimeout: function(handler, timeout2) {
-    var args = [];
-    for (var _i = 2; _i < arguments.length; _i++) {
-      args[_i - 2] = arguments[_i];
-    }
-    var delegate = timeoutProvider.delegate;
-    if (delegate === null || delegate === void 0 ? void 0 : delegate.setTimeout) {
-      return delegate.setTimeout.apply(delegate, __spreadArray([handler, timeout2], __read(args)));
-    }
-    return setTimeout.apply(void 0, __spreadArray([handler, timeout2], __read(args)));
-  },
-  clearTimeout: function(handle) {
-    var delegate = timeoutProvider.delegate;
-    return ((delegate === null || delegate === void 0 ? void 0 : delegate.clearTimeout) || clearTimeout)(handle);
-  },
-  delegate: void 0
-};
-
-// node_modules/rxjs/dist/esm5/internal/util/reportUnhandledError.js
-function reportUnhandledError(err) {
-  timeoutProvider.setTimeout(function() {
-    var onUnhandledError = config.onUnhandledError;
-    if (onUnhandledError) {
-      onUnhandledError(err);
-    } else {
-      throw err;
-    }
-  });
-}
-
-// node_modules/rxjs/dist/esm5/internal/util/noop.js
-function noop() {
-}
-
-// node_modules/rxjs/dist/esm5/internal/NotificationFactories.js
-var COMPLETE_NOTIFICATION = (function() {
-  return createNotification("C", void 0, void 0);
-})();
-function errorNotification(error) {
-  return createNotification("E", void 0, error);
-}
-function nextNotification(value) {
-  return createNotification("N", value, void 0);
-}
-function createNotification(kind, value, error) {
-  return {
-    kind,
-    value,
-    error
-  };
-}
-
-// node_modules/rxjs/dist/esm5/internal/util/errorContext.js
-var context = null;
-function errorContext(cb) {
-  if (config.useDeprecatedSynchronousErrorHandling) {
-    var isRoot = !context;
-    if (isRoot) {
-      context = { errorThrown: false, error: null };
-    }
-    cb();
-    if (isRoot) {
-      var _a = context, errorThrown = _a.errorThrown, error = _a.error;
-      context = null;
-      if (errorThrown) {
-        throw error;
-      }
-    }
-  } else {
-    cb();
-  }
-}
-function captureError(err) {
-  if (config.useDeprecatedSynchronousErrorHandling && context) {
-    context.errorThrown = true;
-    context.error = err;
-  }
-}
-
-// node_modules/rxjs/dist/esm5/internal/Subscriber.js
-var Subscriber = (function(_super) {
-  __extends(Subscriber2, _super);
-  function Subscriber2(destination) {
-    var _this = _super.call(this) || this;
-    _this.isStopped = false;
-    if (destination) {
-      _this.destination = destination;
-      if (isSubscription(destination)) {
-        destination.add(_this);
-      }
-    } else {
-      _this.destination = EMPTY_OBSERVER;
-    }
-    return _this;
-  }
-  Subscriber2.create = function(next, error, complete) {
-    return new SafeSubscriber(next, error, complete);
-  };
-  Subscriber2.prototype.next = function(value) {
-    if (this.isStopped) {
-      handleStoppedNotification(nextNotification(value), this);
-    } else {
-      this._next(value);
-    }
-  };
-  Subscriber2.prototype.error = function(err) {
-    if (this.isStopped) {
-      handleStoppedNotification(errorNotification(err), this);
-    } else {
-      this.isStopped = true;
-      this._error(err);
-    }
-  };
-  Subscriber2.prototype.complete = function() {
-    if (this.isStopped) {
-      handleStoppedNotification(COMPLETE_NOTIFICATION, this);
-    } else {
-      this.isStopped = true;
-      this._complete();
-    }
-  };
-  Subscriber2.prototype.unsubscribe = function() {
-    if (!this.closed) {
-      this.isStopped = true;
-      _super.prototype.unsubscribe.call(this);
-      this.destination = null;
-    }
-  };
-  Subscriber2.prototype._next = function(value) {
-    this.destination.next(value);
-  };
-  Subscriber2.prototype._error = function(err) {
-    try {
-      this.destination.error(err);
-    } finally {
-      this.unsubscribe();
-    }
-  };
-  Subscriber2.prototype._complete = function() {
-    try {
-      this.destination.complete();
-    } finally {
-      this.unsubscribe();
-    }
-  };
-  return Subscriber2;
-})(Subscription);
-var _bind = Function.prototype.bind;
-function bind(fn, thisArg) {
-  return _bind.call(fn, thisArg);
-}
-var ConsumerObserver = (function() {
-  function ConsumerObserver2(partialObserver) {
-    this.partialObserver = partialObserver;
-  }
-  ConsumerObserver2.prototype.next = function(value) {
-    var partialObserver = this.partialObserver;
-    if (partialObserver.next) {
-      try {
-        partialObserver.next(value);
-      } catch (error) {
-        handleUnhandledError(error);
-      }
-    }
-  };
-  ConsumerObserver2.prototype.error = function(err) {
-    var partialObserver = this.partialObserver;
-    if (partialObserver.error) {
-      try {
-        partialObserver.error(err);
-      } catch (error) {
-        handleUnhandledError(error);
-      }
-    } else {
-      handleUnhandledError(err);
-    }
-  };
-  ConsumerObserver2.prototype.complete = function() {
-    var partialObserver = this.partialObserver;
-    if (partialObserver.complete) {
-      try {
-        partialObserver.complete();
-      } catch (error) {
-        handleUnhandledError(error);
-      }
-    }
-  };
-  return ConsumerObserver2;
-})();
-var SafeSubscriber = (function(_super) {
-  __extends(SafeSubscriber2, _super);
-  function SafeSubscriber2(observerOrNext, error, complete) {
-    var _this = _super.call(this) || this;
-    var partialObserver;
-    if (isFunction(observerOrNext) || !observerOrNext) {
-      partialObserver = {
-        next: observerOrNext !== null && observerOrNext !== void 0 ? observerOrNext : void 0,
-        error: error !== null && error !== void 0 ? error : void 0,
-        complete: complete !== null && complete !== void 0 ? complete : void 0
-      };
-    } else {
-      var context_1;
-      if (_this && config.useDeprecatedNextContext) {
-        context_1 = Object.create(observerOrNext);
-        context_1.unsubscribe = function() {
-          return _this.unsubscribe();
-        };
-        partialObserver = {
-          next: observerOrNext.next && bind(observerOrNext.next, context_1),
-          error: observerOrNext.error && bind(observerOrNext.error, context_1),
-          complete: observerOrNext.complete && bind(observerOrNext.complete, context_1)
-        };
-      } else {
-        partialObserver = observerOrNext;
-      }
-    }
-    _this.destination = new ConsumerObserver(partialObserver);
-    return _this;
-  }
-  return SafeSubscriber2;
-})(Subscriber);
-function handleUnhandledError(error) {
-  if (config.useDeprecatedSynchronousErrorHandling) {
-    captureError(error);
-  } else {
-    reportUnhandledError(error);
-  }
-}
-function defaultErrorHandler(err) {
-  throw err;
-}
-function handleStoppedNotification(notification, subscriber) {
-  var onStoppedNotification = config.onStoppedNotification;
-  onStoppedNotification && timeoutProvider.setTimeout(function() {
-    return onStoppedNotification(notification, subscriber);
-  });
-}
-var EMPTY_OBSERVER = {
-  closed: true,
-  next: noop,
-  error: defaultErrorHandler,
-  complete: noop
-};
-
 // node_modules/rxjs/dist/esm5/internal/symbol/observable.js
 var observable = (function() {
   return typeof Symbol === "function" && Symbol.observable || "@@observable";
@@ -1186,73 +544,6 @@ function isObserver(value) {
 function isSubscriber(value) {
   return value && value instanceof Subscriber || isObserver(value) && isSubscription(value);
 }
-
-// node_modules/rxjs/dist/esm5/internal/util/lift.js
-function hasLift(source) {
-  return isFunction(source === null || source === void 0 ? void 0 : source.lift);
-}
-function operate(init) {
-  return function(source) {
-    if (hasLift(source)) {
-      return source.lift(function(liftedSource) {
-        try {
-          return init(liftedSource, this);
-        } catch (err) {
-          this.error(err);
-        }
-      });
-    }
-    throw new TypeError("Unable to lift unknown Observable type");
-  };
-}
-
-// node_modules/rxjs/dist/esm5/internal/operators/OperatorSubscriber.js
-function createOperatorSubscriber(destination, onNext, onComplete, onError, onFinalize) {
-  return new OperatorSubscriber(destination, onNext, onComplete, onError, onFinalize);
-}
-var OperatorSubscriber = (function(_super) {
-  __extends(OperatorSubscriber2, _super);
-  function OperatorSubscriber2(destination, onNext, onComplete, onError, onFinalize, shouldUnsubscribe) {
-    var _this = _super.call(this, destination) || this;
-    _this.onFinalize = onFinalize;
-    _this.shouldUnsubscribe = shouldUnsubscribe;
-    _this._next = onNext ? function(value) {
-      try {
-        onNext(value);
-      } catch (err) {
-        destination.error(err);
-      }
-    } : _super.prototype._next;
-    _this._error = onError ? function(err) {
-      try {
-        onError(err);
-      } catch (err2) {
-        destination.error(err2);
-      } finally {
-        this.unsubscribe();
-      }
-    } : _super.prototype._error;
-    _this._complete = onComplete ? function() {
-      try {
-        onComplete();
-      } catch (err) {
-        destination.error(err);
-      } finally {
-        this.unsubscribe();
-      }
-    } : _super.prototype._complete;
-    return _this;
-  }
-  OperatorSubscriber2.prototype.unsubscribe = function() {
-    var _a;
-    if (!this.shouldUnsubscribe || this.shouldUnsubscribe()) {
-      var closed_1 = this.closed;
-      _super.prototype.unsubscribe.call(this);
-      !closed_1 && ((_a = this.onFinalize) === null || _a === void 0 ? void 0 : _a.call(this));
-    }
-  };
-  return OperatorSubscriber2;
-})(Subscriber);
 
 // node_modules/rxjs/dist/esm5/internal/operators/refCount.js
 function refCount() {
@@ -2793,16 +2084,6 @@ var TimeoutError = createErrorClass(function(_super) {
   };
 });
 
-// node_modules/rxjs/dist/esm5/internal/operators/map.js
-function map(project, thisArg) {
-  return operate(function(source, subscriber) {
-    var index = 0;
-    source.subscribe(createOperatorSubscriber(subscriber, function(value) {
-      subscriber.next(project.call(thisArg, value, index++));
-    }));
-  });
-}
-
 // node_modules/rxjs/dist/esm5/internal/util/mapOneOrManyArgs.js
 var isArray = Array.isArray;
 function callOrApply(fn, args) {
@@ -3783,10 +3064,10 @@ function getInjectorProfilerContext() {
   !ngDevMode && throwError2("getInjectorProfilerContext should never be called in production mode");
   return _injectorProfilerContext;
 }
-function setInjectorProfilerContext(context2) {
+function setInjectorProfilerContext(context) {
   !ngDevMode && throwError2("setInjectorProfilerContext should never be called in production mode");
   const previous = _injectorProfilerContext;
-  _injectorProfilerContext = context2;
+  _injectorProfilerContext = context;
   return previous;
 }
 var injectorProfilerCallbacks = [];
@@ -5261,10 +4542,10 @@ function getOrCreateLViewCleanup(view) {
 function getOrCreateTViewCleanup(tView) {
   return tView.cleanup ??= [];
 }
-function storeCleanupWithContext(tView, lView, context2, cleanupFn) {
+function storeCleanupWithContext(tView, lView, context, cleanupFn) {
   const lCleanup = getOrCreateLViewCleanup(lView);
-  ngDevMode && assertDefined(context2, "Cleanup context is mandatory when registering framework-level destroy hooks");
-  lCleanup.push(context2);
+  ngDevMode && assertDefined(context, "Cleanup context is mandatory when registering framework-level destroy hooks");
+  lCleanup.push(context);
   if (tView.firstCreatePass) {
     getOrCreateTViewCleanup(tView).push(cleanupFn, lCleanup.length - 1);
   } else {
@@ -7905,19 +7186,19 @@ function getLContext(target) {
       }
       const native = unwrapRNode(lView[nodeIndex]);
       const existingCtx = readPatchedData(native);
-      const context2 = existingCtx && !Array.isArray(existingCtx) ? existingCtx : createLContext(lView, nodeIndex, native);
-      if (component && context2.component === void 0) {
-        context2.component = component;
-        attachPatchData(context2.component, context2);
+      const context = existingCtx && !Array.isArray(existingCtx) ? existingCtx : createLContext(lView, nodeIndex, native);
+      if (component && context.component === void 0) {
+        context.component = component;
+        attachPatchData(context.component, context);
       }
-      if (directives && context2.directives === void 0) {
-        context2.directives = directives;
+      if (directives && context.directives === void 0) {
+        context.directives = directives;
         for (let i = 0; i < directives.length; i++) {
-          attachPatchData(directives[i], context2);
+          attachPatchData(directives[i], context);
         }
       }
-      attachPatchData(context2.native, context2);
-      mpValue = context2;
+      attachPatchData(context.native, context);
+      mpValue = context;
     }
   } else {
     const rElement = target;
@@ -7933,9 +7214,9 @@ function getLContext(target) {
         const index = findViaNativeElement(lView, rElement);
         if (index >= 0) {
           const native = unwrapRNode(lView[index]);
-          const context2 = createLContext(lView, index, native);
-          attachPatchData(native, context2);
-          mpValue = context2;
+          const context = createLContext(lView, index, native);
+          attachPatchData(native, context);
+          mpValue = context;
           break;
         }
       }
@@ -7953,15 +7234,15 @@ function getComponentViewByInstance(componentInstance) {
     const contextLView = patchedData;
     const nodeIndex = findViaComponent(contextLView, componentInstance);
     lView = getComponentLViewByIndex(nodeIndex, contextLView);
-    const context2 = createLContext(contextLView, nodeIndex, lView[HOST]);
-    context2.component = componentInstance;
-    attachPatchData(componentInstance, context2);
-    attachPatchData(context2.native, context2);
+    const context = createLContext(contextLView, nodeIndex, lView[HOST]);
+    context.component = componentInstance;
+    attachPatchData(componentInstance, context);
+    attachPatchData(context.native, context);
   } else {
-    const context2 = patchedData;
-    const contextLView = context2.lView;
+    const context = patchedData;
+    const contextLView = context.lView;
     ngDevMode && assertLView(contextLView);
-    lView = getComponentLViewByIndex(context2.nodeIndex, contextLView);
+    lView = getComponentLViewByIndex(context.nodeIndex, contextLView);
   }
   return lView;
 }
@@ -8104,26 +7385,26 @@ function getNearestLContainer(viewOrContainer) {
 }
 function getComponent(element) {
   ngDevMode && assertDomElement(element);
-  const context2 = getLContext(element);
-  if (context2 === null) return null;
-  if (context2.component === void 0) {
-    const lView = context2.lView;
+  const context = getLContext(element);
+  if (context === null) return null;
+  if (context.component === void 0) {
+    const lView = context.lView;
     if (lView === null) {
       return null;
     }
-    context2.component = getComponentAtNodeIndex(context2.nodeIndex, lView);
+    context.component = getComponentAtNodeIndex(context.nodeIndex, lView);
   }
-  return context2.component;
+  return context.component;
 }
 function getContext(element) {
   assertDomElement(element);
-  const context2 = getLContext(element);
-  const lView = context2 ? context2.lView : null;
+  const context = getLContext(element);
+  const lView = context ? context.lView : null;
   return lView === null ? null : lView[CONTEXT];
 }
 function getOwningComponent(elementOrDir) {
-  const context2 = getLContext(elementOrDir);
-  let lView = context2 ? context2.lView : null;
+  const context = getLContext(elementOrDir);
+  let lView = context ? context.lView : null;
   if (lView === null) return null;
   let parent;
   while (lView[TVIEW].type === 2 && (parent = getLViewParent(lView))) {
@@ -8136,18 +7417,18 @@ function getRootComponents(elementOrDir) {
   return lView !== null ? [getRootContext(lView)] : [];
 }
 function getInjector(elementOrDir) {
-  const context2 = getLContext(elementOrDir);
-  const lView = context2 ? context2.lView : null;
+  const context = getLContext(elementOrDir);
+  const lView = context ? context.lView : null;
   if (lView === null) return Injector.NULL;
-  const tNode = lView[TVIEW].data[context2.nodeIndex];
+  const tNode = lView[TVIEW].data[context.nodeIndex];
   return new NodeInjector(tNode, lView);
 }
 function getInjectionTokens(element) {
-  const context2 = getLContext(element);
-  const lView = context2 ? context2.lView : null;
+  const context = getLContext(element);
+  const lView = context ? context.lView : null;
   if (lView === null) return [];
   const tView = lView[TVIEW];
-  const tNode = tView.data[context2.nodeIndex];
+  const tNode = tView.data[context.nodeIndex];
   const providerTokens = [];
   const startIndex = tNode.providerIndexes & 1048575;
   const endIndex = tNode.directiveEnd;
@@ -8164,20 +7445,20 @@ function getDirectives(node) {
   if (node instanceof Text) {
     return [];
   }
-  const context2 = getLContext(node);
-  const lView = context2 ? context2.lView : null;
+  const context = getLContext(node);
+  const lView = context ? context.lView : null;
   if (lView === null) {
     return [];
   }
   const tView = lView[TVIEW];
-  const nodeIndex = context2.nodeIndex;
+  const nodeIndex = context.nodeIndex;
   if (!tView?.data[nodeIndex]) {
     return [];
   }
-  if (context2.directives === void 0) {
-    context2.directives = getDirectivesAtNodeIndex(nodeIndex, lView);
+  if (context.directives === void 0) {
+    context.directives = getDirectivesAtNodeIndex(nodeIndex, lView);
   }
-  return context2.directives === null ? [] : [...context2.directives];
+  return context.directives === null ? [] : [...context.directives];
 }
 var AcxChangeDetectionStrategy;
 (function(AcxChangeDetectionStrategy2) {
@@ -8217,16 +7498,16 @@ function getDirectiveMetadata$1(directiveOrComponentInstance) {
   return null;
 }
 function getLocalRefs(target) {
-  const context2 = getLContext(target);
-  if (context2 === null) return {};
-  if (context2.localRefs === void 0) {
-    const lView = context2.lView;
+  const context = getLContext(target);
+  if (context === null) return {};
+  if (context.localRefs === void 0) {
+    const lView = context.lView;
     if (lView === null) {
       return {};
     }
-    context2.localRefs = discoverLocalRefs(lView, context2.nodeIndex);
+    context.localRefs = discoverLocalRefs(lView, context.nodeIndex);
   }
-  return context2.localRefs || {};
+  return context.localRefs || {};
 }
 function getHostElement(componentOrDirective) {
   return getLContext(componentOrDirective).native;
@@ -8932,9 +8213,9 @@ function canHydrateNode(lView, tNode) {
   const hydrationInfo = lView[HYDRATION];
   return hydrationInfo !== null && !isInSkipHydrationBlock() && !isDetachedByI18n(tNode) && !isDisconnectedNode$1(hydrationInfo, tNode.index - HEADER_OFFSET);
 }
-function processTextNodeBeforeSerialization(context2, node) {
+function processTextNodeBeforeSerialization(context, node) {
   const el = node;
-  const corruptedTextNodes = context2.corruptedTextNodes;
+  const corruptedTextNodes = context.corruptedTextNodes;
   if (el.textContent === "") {
     corruptedTextNodes.set(el, "ngetn");
   } else if (el.nextSibling?.nodeType === Node.TEXT_NODE) {
@@ -9233,9 +8514,9 @@ function reportUnknownPropertyError(message) {
 function getDeclarationComponentDef(lView) {
   !ngDevMode && throwError2("Must never be called in production mode");
   const declarationLView = lView[DECLARATION_COMPONENT_VIEW];
-  const context2 = declarationLView[CONTEXT];
-  if (!context2) return null;
-  return context2.constructor ? getComponentDef(context2.constructor) : null;
+  const context = declarationLView[CONTEXT];
+  if (!context) return null;
+  return context.constructor ? getComponentDef(context.constructor) : null;
 }
 function isHostComponentStandalone(lView) {
   !ngDevMode && throwError2("Must never be called in production mode");
@@ -10295,7 +9576,7 @@ function getOrCreateComponentTView(def) {
   }
   return tView;
 }
-function createLView(parentLView, tView, context2, flags, host, tHostNode, environment, renderer, injector, embeddedViewInjector, hydrationInfo) {
+function createLView(parentLView, tView, context, flags, host, tHostNode, environment, renderer, injector, embeddedViewInjector, hydrationInfo) {
   const lView = tView.blueprint.slice();
   lView[HOST] = host;
   lView[FLAGS] = flags | 4 | 128 | 8 | 64 | 1024;
@@ -10305,7 +9586,7 @@ function createLView(parentLView, tView, context2, flags, host, tHostNode, envir
   resetPreOrderHookFlags(lView);
   ngDevMode && tView.declTNode && parentLView && assertTNodeForLView(tView.declTNode, parentLView);
   lView[PARENT] = lView[DECLARATION_VIEW] = parentLView;
-  lView[CONTEXT] = context2;
+  lView[CONTEXT] = context;
   lView[ENVIRONMENT] = environment || parentLView && parentLView[ENVIRONMENT];
   ngDevMode && assertDefined(lView[ENVIRONMENT], "LViewEnvironment is required");
   lView[RENDERER] = renderer || parentLView && parentLView[RENDERER];
@@ -11161,8 +10442,8 @@ function processCleanups(tView, lView) {
         }
         i += 2;
       } else {
-        const context2 = lCleanup[tCleanup[i + 1]];
-        tCleanup[i].call(context2);
+        const context = lCleanup[tCleanup[i + 1]];
+        tCleanup[i].call(context);
       }
     }
   }
@@ -11191,12 +10472,12 @@ function executeOnDestroys(tView, lView) {
   let destroyHooks;
   if (tView != null && (destroyHooks = tView.destroyHooks) != null) {
     for (let i = 0; i < destroyHooks.length; i += 2) {
-      const context2 = lView[destroyHooks[i]];
-      if (!(context2 instanceof NodeInjectorFactory)) {
+      const context = lView[destroyHooks[i]];
+      if (!(context instanceof NodeInjectorFactory)) {
         const toCall = destroyHooks[i + 1];
         if (Array.isArray(toCall)) {
           for (let j = 0; j < toCall.length; j += 2) {
-            const callContext = context2[toCall[j]];
+            const callContext = context[toCall[j]];
             const hook = toCall[j + 1];
             profiler(ProfilerEvent.LifecycleHookStart, callContext, hook);
             try {
@@ -11206,11 +10487,11 @@ function executeOnDestroys(tView, lView) {
             }
           }
         } else {
-          profiler(ProfilerEvent.LifecycleHookStart, context2, toCall);
+          profiler(ProfilerEvent.LifecycleHookStart, context, toCall);
           try {
-            toCall.call(context2);
+            toCall.call(context);
           } finally {
-            profiler(ProfilerEvent.LifecycleHookEnd, context2, toCall);
+            profiler(ProfilerEvent.LifecycleHookEnd, context, toCall);
           }
         }
       }
@@ -11436,7 +10717,7 @@ function applyStyling(renderer, isClassBased, rNode, prop, value) {
     }
   }
 }
-function executeTemplate(tView, lView, templateFn, rf, context2) {
+function executeTemplate(tView, lView, templateFn, rf, context) {
   const prevSelectedIndex = getSelectedIndex();
   const isUpdatePhase = rf & 2;
   try {
@@ -11445,12 +10726,12 @@ function executeTemplate(tView, lView, templateFn, rf, context2) {
       selectIndexInternal(tView, lView, HEADER_OFFSET, !!ngDevMode && isInCheckNoChangesMode());
     }
     const preHookType = isUpdatePhase ? ProfilerEvent.TemplateUpdateStart : ProfilerEvent.TemplateCreateStart;
-    profiler(preHookType, context2, templateFn);
-    templateFn(rf, context2);
+    profiler(preHookType, context, templateFn);
+    templateFn(rf, context);
   } finally {
     setSelectedIndex(prevSelectedIndex);
     const postHookType = isUpdatePhase ? ProfilerEvent.TemplateUpdateEnd : ProfilerEvent.TemplateCreateEnd;
-    profiler(postHookType, context2, templateFn);
+    profiler(postHookType, context, templateFn);
   }
 }
 function createDirectivesInstances(tView, lView, tNode) {
@@ -11834,18 +11115,18 @@ function syncViewWithBlueprint(tView, lView) {
     lView.push(tView.blueprint[i]);
   }
 }
-function renderView(tView, lView, context2) {
+function renderView(tView, lView, context) {
   ngDevMode && assertEqual(isCreationMode(lView), true, "Should be run in creation mode");
   ngDevMode && assertNotReactive(renderView.name);
   enterView(lView);
   try {
     const viewQuery = tView.viewQuery;
     if (viewQuery !== null) {
-      executeViewQueryFn(1, viewQuery, context2);
+      executeViewQueryFn(1, viewQuery, context);
     }
     const templateFn = tView.template;
     if (templateFn !== null) {
-      executeTemplate(tView, lView, templateFn, 1, context2);
+      executeTemplate(tView, lView, templateFn, 1, context);
     }
     if (tView.firstCreatePass) {
       tView.firstCreatePass = false;
@@ -11855,7 +11136,7 @@ function renderView(tView, lView, context2) {
       refreshContentQueries(tView, lView);
     }
     if (tView.staticViewQueries) {
-      executeViewQueryFn(2, tView.viewQuery, context2);
+      executeViewQueryFn(2, tView.viewQuery, context);
     }
     const components = tView.components;
     if (components !== null) {
@@ -11877,7 +11158,7 @@ function renderChildComponents(hostLView, components) {
     renderComponent(hostLView, components[i]);
   }
 }
-function createAndRenderEmbeddedLView(declarationLView, templateTNode, context2, options) {
+function createAndRenderEmbeddedLView(declarationLView, templateTNode, context, options) {
   const prevConsumer = setActiveConsumer(null);
   try {
     const embeddedTView = templateTNode.tView;
@@ -11885,7 +11166,7 @@ function createAndRenderEmbeddedLView(declarationLView, templateTNode, context2,
     ngDevMode && assertTNodeForLView(templateTNode, declarationLView);
     const isSignalView = declarationLView[FLAGS] & 4096;
     const viewFlags = isSignalView ? 4096 : 16;
-    const embeddedLView = createLView(declarationLView, embeddedTView, context2, viewFlags, null, templateTNode, null, null, options?.injector ?? null, options?.embeddedViewInjector ?? null, options?.dehydratedView ?? null);
+    const embeddedLView = createLView(declarationLView, embeddedTView, context, viewFlags, null, templateTNode, null, null, options?.injector ?? null, options?.embeddedViewInjector ?? null, options?.dehydratedView ?? null);
     const declarationLContainer = declarationLView[templateTNode.index];
     ngDevMode && assertLContainer(declarationLContainer);
     embeddedLView[DECLARATION_LCONTAINER] = declarationLContainer;
@@ -11893,7 +11174,7 @@ function createAndRenderEmbeddedLView(declarationLView, templateTNode, context2,
     if (declarationViewLQueries !== null) {
       embeddedLView[QUERIES] = declarationViewLQueries.createEmbeddedView(embeddedTView);
     }
-    renderView(embeddedTView, embeddedLView, context2);
+    renderView(embeddedTView, embeddedLView, context);
     return embeddedLView;
   } finally {
     setActiveConsumer(prevConsumer);
@@ -12080,7 +11361,7 @@ function checkNoChangesInternal(lView, exhaustive) {
     setIsInCheckNoChangesMode(CheckNoChangesMode.Off);
   }
 }
-function refreshView(tView, lView, templateFn, context2) {
+function refreshView(tView, lView, templateFn, context) {
   ngDevMode && assertEqual(isCreationMode(lView), false, "Should be run in update mode");
   if (isDestroyed(lView)) return;
   const flags = lView[FLAGS];
@@ -12107,7 +11388,7 @@ function refreshView(tView, lView, templateFn, context2) {
     resetPreOrderHookFlags(lView);
     setBindingIndex(tView.bindingStartIndex);
     if (templateFn !== null) {
-      executeTemplate(tView, lView, templateFn, 2, context2);
+      executeTemplate(tView, lView, templateFn, 2, context);
     }
     const hooksInitPhaseCompleted = (flags & 3) === 3;
     if (!isInCheckNoChangesPass) {
@@ -12153,7 +11434,7 @@ function refreshView(tView, lView, templateFn, context2) {
     }
     const viewQuery = tView.viewQuery;
     if (viewQuery !== null) {
-      executeViewQueryFn(2, viewQuery, context2);
+      executeViewQueryFn(2, viewQuery, context);
     }
     if (!isInCheckNoChangesPass) {
       if (hooksInitPhaseCompleted) {
@@ -12285,12 +11566,12 @@ function processHostBindingOpCodes(tView, lView) {
         const bindingRootIndx = hostBindingOpCodes[++i];
         const hostBindingFn = hostBindingOpCodes[++i];
         setBindingRootForHostBindings(bindingRootIndx, directiveIdx);
-        const context2 = lView[directiveIdx];
-        profiler(ProfilerEvent.HostBindingsUpdateStart, context2);
+        const context = lView[directiveIdx];
+        profiler(ProfilerEvent.HostBindingsUpdateStart, context);
         try {
-          hostBindingFn(2, context2);
+          hostBindingFn(2, context);
         } finally {
-          profiler(ProfilerEvent.HostBindingsUpdateEnd, context2);
+          profiler(ProfilerEvent.HostBindingsUpdateEnd, context);
         }
       }
     }
@@ -12542,11 +11823,11 @@ var TemplateRef = class {
   get ssrId() {
     return this._declarationTContainer.tView?.ssrId || null;
   }
-  createEmbeddedView(context2, injector) {
-    return this.createEmbeddedViewImpl(context2, injector);
+  createEmbeddedView(context, injector) {
+    return this.createEmbeddedViewImpl(context, injector);
   }
-  createEmbeddedViewImpl(context2, injector, dehydratedView) {
-    const embeddedLView = createAndRenderEmbeddedLView(this._declarationLView, this._declarationTContainer, context2, {
+  createEmbeddedViewImpl(context, injector, dehydratedView) {
+    const embeddedLView = createAndRenderEmbeddedLView(this._declarationLView, this._declarationTContainer, context, {
       embeddedViewInjector: injector,
       dehydratedView
     });
@@ -13361,11 +12642,11 @@ function isI18nHydrationEnabled(injector) {
   injector = injector ?? inject2(Injector);
   return injector.get(IS_I18N_HYDRATION_ENABLED, false);
 }
-function getOrComputeI18nChildren(tView, context2) {
-  let i18nChildren = context2.i18nChildren.get(tView);
+function getOrComputeI18nChildren(tView, context) {
+  let i18nChildren = context.i18nChildren.get(tView);
   if (i18nChildren === void 0) {
     i18nChildren = collectI18nChildren(tView);
-    context2.i18nChildren.set(tView, i18nChildren);
+    context.i18nChildren.set(tView, i18nChildren);
   }
   return i18nChildren;
 }
@@ -13402,8 +12683,8 @@ function collectI18nChildren(tView) {
   }
   return children.size === 0 ? null : children;
 }
-function trySerializeI18nBlock(lView, index, context2) {
-  if (!context2.isI18nHydrationEnabled) {
+function trySerializeI18nBlock(lView, index, context) {
+  if (!context.isI18nHydrationEnabled) {
     return null;
   }
   const tView = lView[TVIEW];
@@ -13420,13 +12701,13 @@ function trySerializeI18nBlock(lView, index, context2) {
     disconnectedNodes: /* @__PURE__ */ new Set(),
     disjointNodes: /* @__PURE__ */ new Set()
   };
-  serializeI18nBlock(lView, serializedI18nBlock, context2, tI18n.ast);
+  serializeI18nBlock(lView, serializedI18nBlock, context, tI18n.ast);
   return serializedI18nBlock.caseQueue.length === 0 && serializedI18nBlock.disconnectedNodes.size === 0 && serializedI18nBlock.disjointNodes.size === 0 ? null : serializedI18nBlock;
 }
-function serializeI18nBlock(lView, serializedI18nBlock, context2, nodes) {
+function serializeI18nBlock(lView, serializedI18nBlock, context, nodes) {
   let prevRNode = null;
   for (const node of nodes) {
-    const nextRNode = serializeI18nNode(lView, serializedI18nBlock, context2, node);
+    const nextRNode = serializeI18nNode(lView, serializedI18nBlock, context, node);
     if (nextRNode) {
       if (isDisjointNode(prevRNode, nextRNode)) {
         serializedI18nBlock.disjointNodes.add(node.index - HEADER_OFFSET);
@@ -13439,7 +12720,7 @@ function serializeI18nBlock(lView, serializedI18nBlock, context2, nodes) {
 function isDisjointNode(prevNode, nextNode) {
   return prevNode && prevNode.nextSibling !== nextNode;
 }
-function serializeI18nNode(lView, serializedI18nBlock, context2, node) {
+function serializeI18nNode(lView, serializedI18nBlock, context, node) {
   const maybeRNode = unwrapRNode(lView[node.index]);
   if (!maybeRNode || isDisconnectedRNode(maybeRNode)) {
     serializedI18nBlock.disconnectedNodes.add(node.index - HEADER_OFFSET);
@@ -13448,12 +12729,12 @@ function serializeI18nNode(lView, serializedI18nBlock, context2, node) {
   const rNode = maybeRNode;
   switch (node.kind) {
     case 0: {
-      processTextNodeBeforeSerialization(context2, rNode);
+      processTextNodeBeforeSerialization(context, rNode);
       break;
     }
     case 1:
     case 2: {
-      serializeI18nBlock(lView, serializedI18nBlock, context2, node.children);
+      serializeI18nBlock(lView, serializedI18nBlock, context, node.children);
       break;
     }
     case 3: {
@@ -13461,7 +12742,7 @@ function serializeI18nNode(lView, serializedI18nBlock, context2, node) {
       if (currentCase != null) {
         const caseIdx = currentCase < 0 ? ~currentCase : currentCase;
         serializedI18nBlock.caseQueue.push(caseIdx);
-        serializeI18nBlock(lView, serializedI18nBlock, context2, node.cases[caseIdx]);
+        serializeI18nBlock(lView, serializedI18nBlock, context, node.cases[caseIdx]);
       }
       break;
     }
@@ -13484,14 +12765,14 @@ function getFirstNativeNodeForI18nNode(lView, node) {
 function setCurrentNode(state, node) {
   state.currentNode = node;
 }
-function appendI18nNodeToCollection(context2, state, astNode) {
+function appendI18nNodeToCollection(context, state, astNode) {
   const noOffsetIndex = astNode.index - HEADER_OFFSET;
   const {
     disconnectedNodes
-  } = context2;
+  } = context;
   const currentNode = state.currentNode;
   if (state.isConnected) {
-    context2.i18nNodes.set(noOffsetIndex, currentNode);
+    context.i18nNodes.set(noOffsetIndex, currentNode);
     disconnectedNodes.delete(noOffsetIndex);
   } else {
     disconnectedNodes.add(noOffsetIndex);
@@ -13552,29 +12833,29 @@ function prepareI18nBlockForHydrationImpl(lView, index, parentTNode, subTemplate
   }, tI18n.ast);
   hydrationInfo.disconnectedNodes = disconnectedNodes.size === 0 ? null : disconnectedNodes;
 }
-function collectI18nNodesFromDom(context2, state, nodeOrNodes) {
+function collectI18nNodesFromDom(context, state, nodeOrNodes) {
   if (Array.isArray(nodeOrNodes)) {
     let nextState = state;
     for (const node of nodeOrNodes) {
-      const targetNode = tryLocateRNodeByPath(context2.hydrationInfo, context2.lView, node.index - HEADER_OFFSET);
+      const targetNode = tryLocateRNodeByPath(context.hydrationInfo, context.lView, node.index - HEADER_OFFSET);
       if (targetNode) {
         nextState = forkHydrationState(state, targetNode);
       }
-      collectI18nNodesFromDom(context2, nextState, node);
+      collectI18nNodesFromDom(context, nextState, node);
     }
   } else {
-    if (context2.disconnectedNodes.has(nodeOrNodes.index - HEADER_OFFSET)) {
+    if (context.disconnectedNodes.has(nodeOrNodes.index - HEADER_OFFSET)) {
       return;
     }
     switch (nodeOrNodes.kind) {
       case 0: {
-        const currentNode = appendI18nNodeToCollection(context2, state, nodeOrNodes);
+        const currentNode = appendI18nNodeToCollection(context, state, nodeOrNodes);
         setCurrentNode(state, currentNode?.nextSibling ?? null);
         break;
       }
       case 1: {
-        collectI18nNodesFromDom(context2, forkHydrationState(state, state.currentNode?.firstChild ?? null), nodeOrNodes.children);
-        const currentNode = appendI18nNodeToCollection(context2, state, nodeOrNodes);
+        collectI18nNodesFromDom(context, forkHydrationState(state, state.currentNode?.firstChild ?? null), nodeOrNodes.children);
+        const currentNode = appendI18nNodeToCollection(context, state, nodeOrNodes);
         setCurrentNode(state, currentNode?.nextSibling ?? null);
         break;
       }
@@ -13582,17 +12863,17 @@ function collectI18nNodesFromDom(context2, state, nodeOrNodes) {
         const noOffsetIndex = nodeOrNodes.index - HEADER_OFFSET;
         const {
           hydrationInfo
-        } = context2;
+        } = context;
         const containerSize = getNgContainerSize(hydrationInfo, noOffsetIndex);
         switch (nodeOrNodes.type) {
           case 0: {
-            const currentNode = appendI18nNodeToCollection(context2, state, nodeOrNodes);
+            const currentNode = appendI18nNodeToCollection(context, state, nodeOrNodes);
             if (isSerializedElementContainer(hydrationInfo, noOffsetIndex)) {
-              collectI18nNodesFromDom(context2, state, nodeOrNodes.children);
+              collectI18nNodesFromDom(context, state, nodeOrNodes.children);
               const nextNode = skipSiblingNodes(state, 1);
               setCurrentNode(state, nextNode);
             } else {
-              collectI18nNodesFromDom(context2, forkHydrationState(state, state.currentNode?.firstChild ?? null), nodeOrNodes.children);
+              collectI18nNodesFromDom(context, forkHydrationState(state, state.currentNode?.firstChild ?? null), nodeOrNodes.children);
               setCurrentNode(state, currentNode?.nextSibling ?? null);
               if (containerSize !== null) {
                 const nextNode = skipSiblingNodes(state, containerSize + 1);
@@ -13603,7 +12884,7 @@ function collectI18nNodesFromDom(context2, state, nodeOrNodes) {
           }
           case 1: {
             ngDevMode && assertNotEqual(containerSize, null, "Expected a container size while hydrating i18n subtemplate");
-            appendI18nNodeToCollection(context2, state, nodeOrNodes);
+            appendI18nNodeToCollection(context, state, nodeOrNodes);
             const nextNode = skipSiblingNodes(state, containerSize + 1);
             setCurrentNode(state, nextNode);
             break;
@@ -13612,21 +12893,21 @@ function collectI18nNodesFromDom(context2, state, nodeOrNodes) {
         break;
       }
       case 3: {
-        const selectedCase = state.isConnected ? context2.caseQueue.shift() : null;
+        const selectedCase = state.isConnected ? context.caseQueue.shift() : null;
         const childState = {
           currentNode: null,
           isConnected: false
         };
         for (let i = 0; i < nodeOrNodes.cases.length; i++) {
-          collectI18nNodesFromDom(context2, i === selectedCase ? state : childState, nodeOrNodes.cases[i]);
+          collectI18nNodesFromDom(context, i === selectedCase ? state : childState, nodeOrNodes.cases[i]);
         }
         if (selectedCase !== null) {
-          context2.dehydratedIcuData.set(nodeOrNodes.index, {
+          context.dehydratedIcuData.set(nodeOrNodes.index, {
             case: selectedCase,
             node: nodeOrNodes
           });
         }
-        const currentNode = appendI18nNodeToCollection(context2, state, nodeOrNodes);
+        const currentNode = appendI18nNodeToCollection(context, state, nodeOrNodes);
         setCurrentNode(state, currentNode?.nextSibling ?? null);
         break;
       }
@@ -14563,26 +13844,26 @@ function wrapListener(tNode, lView, listenerFn) {
     }
     const startView = isComponentHost(tNode) ? getComponentLViewByIndex(tNode.index, lView) : lView;
     markViewDirty(startView, 5);
-    const context2 = lView[CONTEXT];
-    let result = executeListenerWithErrorHandling(lView, context2, listenerFn, event);
+    const context = lView[CONTEXT];
+    let result = executeListenerWithErrorHandling(lView, context, listenerFn, event);
     let nextListenerFn = wrapListenerIn_markDirtyAndPreventDefault.__ngNextListenerFn__;
     while (nextListenerFn) {
-      result = executeListenerWithErrorHandling(lView, context2, nextListenerFn, event) && result;
+      result = executeListenerWithErrorHandling(lView, context, nextListenerFn, event) && result;
       nextListenerFn = nextListenerFn.__ngNextListenerFn__;
     }
     return result;
   };
 }
-function executeListenerWithErrorHandling(lView, context2, listenerFn, e) {
+function executeListenerWithErrorHandling(lView, context, listenerFn, e) {
   const prevConsumer = setActiveConsumer(null);
   try {
-    profiler(ProfilerEvent.OutputStart, context2, listenerFn);
+    profiler(ProfilerEvent.OutputStart, context, listenerFn);
     return listenerFn(e) !== false;
   } catch (error) {
     handleUncaughtError(lView, error);
     return false;
   } finally {
-    profiler(ProfilerEvent.OutputEnd, context2, listenerFn);
+    profiler(ProfilerEvent.OutputEnd, context, listenerFn);
     setActiveConsumer(prevConsumer);
   }
 }
@@ -15303,7 +14584,7 @@ var R3ViewContainerRef = class _R3ViewContainerRef extends ViewContainerRef {
   get length() {
     return this._lContainer.length - CONTAINER_HEADER_OFFSET;
   }
-  createEmbeddedView(templateRef, context2, indexOrOptions) {
+  createEmbeddedView(templateRef, context, indexOrOptions) {
     let index;
     let injector;
     if (typeof indexOrOptions === "number") {
@@ -15313,7 +14594,7 @@ var R3ViewContainerRef = class _R3ViewContainerRef extends ViewContainerRef {
       injector = indexOrOptions.injector;
     }
     const dehydratedView = findMatchingDehydratedView(this._lContainer, templateRef.ssrId);
-    const viewRef = templateRef.createEmbeddedViewImpl(context2 || {}, injector, dehydratedView);
+    const viewRef = templateRef.createEmbeddedViewImpl(context || {}, injector, dehydratedView);
     this.insertImpl(viewRef, index, shouldAddViewToDom(this._hostTNode, dehydratedView));
     return viewRef;
   }
@@ -17381,23 +16662,23 @@ function setupFrameworkInjectorProfiler() {
 }
 function injectorProfilerEventHandler(injectorProfilerEvent) {
   const {
-    context: context2,
+    context,
     type
   } = injectorProfilerEvent;
   if (type === 0) {
-    handleInjectEvent(context2, injectorProfilerEvent.service);
+    handleInjectEvent(context, injectorProfilerEvent.service);
   } else if (type === 1) {
-    handleInstanceCreatedByInjectorEvent(context2, injectorProfilerEvent.instance);
+    handleInstanceCreatedByInjectorEvent(context, injectorProfilerEvent.instance);
   } else if (type === 2) {
-    handleProviderConfiguredEvent(context2, injectorProfilerEvent.providerRecord);
+    handleProviderConfiguredEvent(context, injectorProfilerEvent.providerRecord);
   } else if (type === 3) {
-    handleEffectCreatedEvent(context2, injectorProfilerEvent.effect);
+    handleEffectCreatedEvent(context, injectorProfilerEvent.effect);
   } else if (type === 4) {
-    handleEffectCreatedEvent(context2, injectorProfilerEvent.effectPhase);
+    handleEffectCreatedEvent(context, injectorProfilerEvent.effectPhase);
   }
 }
-function handleEffectCreatedEvent(context2, effect2) {
-  const diResolver = getDIResolver(context2.injector);
+function handleEffectCreatedEvent(context, effect2) {
+  const diResolver = getDIResolver(context.injector);
   if (diResolver === null) {
     throwError2("An EffectCreated event must be run within an injection context.");
   }
@@ -17419,8 +16700,8 @@ function handleEffectCreatedEvent(context2, effect2) {
     }
   });
 }
-function handleInjectEvent(context2, data) {
-  const diResolver = getDIResolver(context2.injector);
+function handleInjectEvent(context, data) {
+  const diResolver = getDIResolver(context.injector);
   if (diResolver === null) {
     throwError2("An Inject event must be run within an injection context.");
   }
@@ -17428,27 +16709,27 @@ function handleInjectEvent(context2, data) {
   if (!diResolverToInstantiatedToken.has(diResolver)) {
     diResolverToInstantiatedToken.set(diResolver, /* @__PURE__ */ new WeakMap());
   }
-  if (!canBeHeldWeakly(context2.token)) {
+  if (!canBeHeldWeakly(context.token)) {
     return;
   }
   const instantiatedTokenToDependencies = diResolverToInstantiatedToken.get(diResolver);
-  if (!instantiatedTokenToDependencies.has(context2.token)) {
-    instantiatedTokenToDependencies.set(context2.token, []);
+  if (!instantiatedTokenToDependencies.has(context.token)) {
+    instantiatedTokenToDependencies.set(context.token, []);
   }
   const {
     token,
     value,
     flags
   } = data;
-  assertDefined(context2.token, "Injector profiler context token is undefined.");
-  const dependencies = instantiatedTokenToDependencies.get(context2.token);
+  assertDefined(context.token, "Injector profiler context token is undefined.");
+  const dependencies = instantiatedTokenToDependencies.get(context.token);
   assertDefined(dependencies, "Could not resolve dependencies for token.");
-  if (context2.injector instanceof NodeInjector) {
+  if (context.injector instanceof NodeInjector) {
     dependencies.push({
       token,
       value,
       flags,
-      injectedIn: getNodeInjectorContext(context2.injector)
+      injectedIn: getNodeInjectorContext(context.injector)
     });
   } else {
     dependencies.push({
@@ -17473,14 +16754,14 @@ function getNodeInjectorContext(injector) {
     tNode
   };
 }
-function handleInstanceCreatedByInjectorEvent(context2, data) {
+function handleInstanceCreatedByInjectorEvent(context, data) {
   const {
     value
   } = data;
   if (data.value == null) {
     return;
   }
-  if (getDIResolver(context2.injector) === null) {
+  if (getDIResolver(context.injector) === null) {
     throwError2("An InjectorCreatedInstance event must be run within an injection context.");
   }
   let standaloneComponent = void 0;
@@ -17490,7 +16771,7 @@ function handleInstanceCreatedByInjectorEvent(context2, data) {
   if (standaloneComponent == void 0 || !isStandaloneComponent(standaloneComponent)) {
     return;
   }
-  const environmentInjector = context2.injector.get(EnvironmentInjector, null, {
+  const environmentInjector = context.injector.get(EnvironmentInjector, null, {
     optional: true
   });
   if (environmentInjector === null) {
@@ -17508,15 +16789,15 @@ function isStandaloneComponent(value) {
   const def = getComponentDef(value);
   return !!def?.standalone;
 }
-function handleProviderConfiguredEvent(context2, data) {
+function handleProviderConfiguredEvent(context, data) {
   const {
     resolverToProviders
   } = frameworkDIDebugData;
   let diResolver;
-  if (context2?.injector instanceof NodeInjector) {
-    diResolver = getNodeInjectorTNode(context2.injector);
+  if (context?.injector instanceof NodeInjector) {
+    diResolver = getNodeInjectorTNode(context.injector);
   } else {
-    diResolver = context2.injector;
+    diResolver = context.injector;
   }
   if (diResolver === null) {
     throwError2("A ProviderConfigured event must be run within an injection context.");
@@ -22848,10 +22129,10 @@ function ɵɵinterpolate8(prefix, v0, i0, v1, i1, v2, i2, v3, i3, v4, i4, v5, i5
 function ɵɵinterpolateV(values) {
   return interpolationV(getLView(), values);
 }
-function ɵɵarrowFunction(slotOffset, factory, context2) {
+function ɵɵarrowFunction(slotOffset, factory, context) {
   const bindingIndex = getBindingRoot() + slotOffset;
   const lView = getLView();
-  return lView[bindingIndex] === NO_CHANGE ? updateBinding(lView, bindingIndex, factory(context2, lView)) : getBinding(lView, bindingIndex);
+  return lView[bindingIndex] === NO_CHANGE ? updateBinding(lView, bindingIndex, factory(context, lView)) : getBinding(lView, bindingIndex);
 }
 function providersResolver(def, providers, isViewProviders) {
   const tView = getTView();
@@ -23196,9 +22477,9 @@ function getPipeDef2(name, registry) {
 function getMultipleMatchingPipesMessage(name) {
   const lView = getLView();
   const declarationLView = lView[DECLARATION_COMPONENT_VIEW];
-  const context2 = declarationLView[CONTEXT];
+  const context = declarationLView[CONTEXT];
   const hostIsStandalone = isHostComponentStandalone(lView);
-  const componentInfoMessage = context2 ? ` in the '${context2.constructor.name}' component` : "";
+  const componentInfoMessage = context ? ` in the '${context.constructor.name}' component` : "";
   const verifyMessage = `check ${hostIsStandalone ? "'@Component.imports' of this component" : "the imports of this module"}`;
   const errorMessage = `Multiple pipes match the name \`${name}\`${componentInfoMessage}. ${verifyMessage}`;
   return errorMessage;
@@ -23206,9 +22487,9 @@ function getMultipleMatchingPipesMessage(name) {
 function getPipeNotFoundErrorMessage(name) {
   const lView = getLView();
   const declarationLView = lView[DECLARATION_COMPONENT_VIEW];
-  const context2 = declarationLView[CONTEXT];
+  const context = declarationLView[CONTEXT];
   const hostIsStandalone = isHostComponentStandalone(lView);
-  const componentInfoMessage = context2 ? ` in the '${context2.constructor.name}' component` : "";
+  const componentInfoMessage = context ? ` in the '${context.constructor.name}' component` : "";
   const verifyMessage = `Verify that it is ${hostIsStandalone ? "included in the '@Component.imports' of this component" : "declared or imported in this module"}`;
   const errorMessage = `The pipe '${name}' could not be found${componentInfoMessage}. ${verifyMessage}`;
   return errorMessage;
@@ -24689,24 +23970,24 @@ var DebugElement = class extends DebugNode {
     return this.nativeNode.nodeType == Node.ELEMENT_NODE ? this.nativeNode : null;
   }
   get name() {
-    const context2 = getLContext(this.nativeNode);
-    const lView = context2 ? context2.lView : null;
+    const context = getLContext(this.nativeNode);
+    const lView = context ? context.lView : null;
     if (lView !== null) {
       const tData = lView[TVIEW].data;
-      const tNode = tData[context2.nodeIndex];
+      const tNode = tData[context.nodeIndex];
       return tNode.value;
     } else {
       return this.nativeNode.nodeName;
     }
   }
   get properties() {
-    const context2 = getLContext(this.nativeNode);
-    const lView = context2 ? context2.lView : null;
+    const context = getLContext(this.nativeNode);
+    const lView = context ? context.lView : null;
     if (lView === null) {
       return {};
     }
     const tData = lView[TVIEW].data;
-    const tNode = tData[context2.nodeIndex];
+    const tNode = tData[context.nodeIndex];
     const properties = {};
     copyDomProperties(this.nativeElement, properties);
     collectPropertyBindings(properties, tNode, lView, tData);
@@ -24718,12 +23999,12 @@ var DebugElement = class extends DebugNode {
     if (!element) {
       return attributes;
     }
-    const context2 = getLContext(element);
-    const lView = context2 ? context2.lView : null;
+    const context = getLContext(element);
+    const lView = context ? context.lView : null;
     if (lView === null) {
       return {};
     }
-    const tNodeAttrs = lView[TVIEW].data[context2.nodeIndex].attrs;
+    const tNodeAttrs = lView[TVIEW].data[context.nodeIndex].attrs;
     const lowercaseTNodeAttrs = [];
     if (tNodeAttrs) {
       let i = 0;
@@ -24831,10 +24112,10 @@ function isPrimitiveValue(value) {
   return typeof value === "string" || typeof value === "boolean" || typeof value === "number" || value === null;
 }
 function _queryAll(parentElement, predicate, matches, elementsOnly) {
-  const context2 = getLContext(parentElement.nativeNode);
-  const lView = context2 ? context2.lView : null;
+  const context = getLContext(parentElement.nativeNode);
+  const lView = context ? context.lView : null;
   if (lView !== null) {
-    const parentTNode = lView[TVIEW].data[context2.nodeIndex];
+    const parentTNode = lView[TVIEW].data[context.nodeIndex];
     _queryNodeChildren(parentTNode, lView, predicate, matches, elementsOnly, parentElement.nativeNode);
   } else {
     _queryNativeNodeDescendants(parentElement.nativeNode, predicate, matches, elementsOnly);
@@ -28168,22 +27449,22 @@ function calcNumRootNodesInLContainer(lContainer) {
   collectNativeNodesInLContainer(lContainer, rootNodes);
   return rootNodes.length;
 }
-function annotateComponentLViewForHydration(lView, context2) {
+function annotateComponentLViewForHydration(lView, context) {
   const hostElement = lView[HOST];
   if (hostElement && !hostElement.hasAttribute(SKIP_HYDRATION_ATTR_NAME)) {
-    return annotateHostElementForHydration(hostElement, lView, null, context2);
+    return annotateHostElementForHydration(hostElement, lView, null, context);
   }
   return null;
 }
-function annotateLContainerForHydration(lContainer, context2) {
+function annotateLContainerForHydration(lContainer, context) {
   const componentLView = unwrapLView(lContainer[HOST]);
-  const componentLViewNghIndex = annotateComponentLViewForHydration(componentLView, context2);
+  const componentLViewNghIndex = annotateComponentLViewForHydration(componentLView, context);
   if (componentLViewNghIndex === null) {
     return;
   }
   const hostElement = unwrapRNode(componentLView[HOST]);
   const rootLView = lContainer[PARENT];
-  const rootLViewNghIndex = annotateHostElementForHydration(hostElement, rootLView, null, context2);
+  const rootLViewNghIndex = annotateHostElementForHydration(hostElement, rootLView, null, context);
   const renderer = componentLView[RENDERER];
   const finalIndex = `${componentLViewNghIndex}|${rootLViewNghIndex}`;
   renderer.setAttribute(hostElement, NGH_ATTR_NAME, finalIndex);
@@ -28205,7 +27486,7 @@ function annotateForHydration(appRef, doc) {
   for (const viewRef of viewRefs) {
     const lNode = getLNodeForHydration(viewRef);
     if (lNode !== null) {
-      const context2 = {
+      const context = {
         serializedViewCollection,
         corruptedTextNodes,
         isI18nHydrationEnabled: isI18nHydrationEnabledVal,
@@ -28216,9 +27497,9 @@ function annotateForHydration(appRef, doc) {
         deferBlocks
       };
       if (isLContainer(lNode)) {
-        annotateLContainerForHydration(lNode, context2);
+        annotateLContainerForHydration(lNode, context);
       } else {
-        annotateComponentLViewForHydration(lNode, context2);
+        annotateComponentLViewForHydration(lNode, context);
       }
       insertCorruptedTextNodeMarkers(corruptedTextNodes, doc);
     }
@@ -28235,7 +27516,7 @@ function annotateForHydration(appRef, doc) {
   }
   return eventTypesToReplay;
 }
-function serializeLContainer(lContainer, tNode, lView, parentDeferBlockId, context2) {
+function serializeLContainer(lContainer, tNode, lView, parentDeferBlockId, context) {
   const views = [];
   let lastViewAsString = "";
   for (let i = CONTAINER_HEADER_OFFSET; i < lContainer.length; i++) {
@@ -28247,7 +27528,7 @@ function serializeLContainer(lContainer, tNode, lView, parentDeferBlockId, conte
       childLView = childLView[HEADER_OFFSET];
       if (isLContainer(childLView)) {
         numRootNodes = calcNumRootNodesInLContainer(childLView) + 1;
-        annotateLContainerForHydration(childLView, context2);
+        annotateLContainerForHydration(childLView, context);
         const componentLView = unwrapLView(childLView[HOST]);
         serializedView = {
           [TEMPLATE_ID]: componentLView[TVIEW].ssrId,
@@ -28272,8 +27553,8 @@ function serializeLContainer(lContainer, tNode, lView, parentDeferBlockId, conte
       if (isDeferBlock(lView[TVIEW], tNode)) {
         const lDetails = getLDeferBlockDetails(lView, tNode);
         const tDetails = getTDeferBlockDetails(lView[TVIEW], tNode);
-        if (context2.isIncrementalHydrationEnabled && tDetails.hydrateTriggers !== null) {
-          const deferBlockId = `d${context2.deferBlocks.size}`;
+        if (context.isIncrementalHydrationEnabled && tDetails.hydrateTriggers !== null) {
+          const deferBlockId = `d${context.deferBlocks.size}`;
           if (tDetails.hydrateTriggers.has(7)) {
             isHydrateNeverBlock = true;
           }
@@ -28290,7 +27571,7 @@ function serializeLContainer(lContainer, tNode, lView, parentDeferBlockId, conte
           if (parentDeferBlockId !== null) {
             deferBlockInfo[DEFER_PARENT_BLOCK_ID] = parentDeferBlockId;
           }
-          context2.deferBlocks.set(deferBlockId, deferBlockInfo);
+          context.deferBlocks.set(deferBlockId, deferBlockInfo);
           const node = unwrapRNode(lContainer);
           if (node !== void 0) {
             if (node.nodeType === Node.COMMENT_NODE) {
@@ -28302,7 +27583,7 @@ function serializeLContainer(lContainer, tNode, lView, parentDeferBlockId, conte
             annotateDeferBlockAnchorForHydration(node, deferBlockId);
           }
           if (!isHydrateNeverBlock) {
-            annotateDeferBlockRootNodesWithJsAction(tDetails, rootNodes, deferBlockId, context2);
+            annotateDeferBlockRootNodesWithJsAction(tDetails, rootNodes, deferBlockId, context);
           }
           parentDeferBlockId = deferBlockId;
           serializedView[DEFER_BLOCK_ID] = deferBlockId;
@@ -28312,7 +27593,7 @@ function serializeLContainer(lContainer, tNode, lView, parentDeferBlockId, conte
       if (!isHydrateNeverBlock) {
         const childHostElement = unwrapRNode(childLView[HOST]);
         if (childLView[TVIEW].type !== 1 || childHostElement === null || !childHostElement.hasAttribute(SKIP_HYDRATION_ATTR_NAME)) {
-          Object.assign(serializedView, serializeLView(lContainer[i], parentDeferBlockId, context2));
+          Object.assign(serializedView, serializeLView(lContainer[i], parentDeferBlockId, context));
         }
       }
     }
@@ -28362,15 +27643,15 @@ function appendDisconnectedNodeIndex(ngh, tNodeOrNoOffsetIndex) {
     ngh[DISCONNECTED_NODES].push(noOffsetIndex);
   }
 }
-function serializeLView(lView, parentDeferBlockId = null, context2) {
+function serializeLView(lView, parentDeferBlockId = null, context) {
   const ngh = {};
   const tView = lView[TVIEW];
-  const i18nChildren = getOrComputeI18nChildren(tView, context2);
-  const nativeElementsToEventTypes = context2.shouldReplayEvents ? collectDomEventsInfo(tView, lView, context2.eventTypesToReplay) : null;
+  const i18nChildren = getOrComputeI18nChildren(tView, context);
+  const nativeElementsToEventTypes = context.shouldReplayEvents ? collectDomEventsInfo(tView, lView, context.eventTypesToReplay) : null;
   for (let i = HEADER_OFFSET; i < tView.bindingStartIndex; i++) {
     const tNode = tView.data[i];
     const noOffsetIndex = i - HEADER_OFFSET;
-    const i18nData = trySerializeI18nBlock(lView, i, context2);
+    const i18nData = trySerializeI18nBlock(lView, i, context);
     if (i18nData) {
       ngh[I18N_DATA] ??= {};
       ngh[I18N_DATA][noOffsetIndex] = i18nData.caseQueue;
@@ -28420,15 +27701,15 @@ function serializeLView(lView, parentDeferBlockId = null, context2) {
       if (Array.isArray(hostNode)) {
         const targetNode = unwrapRNode(hostNode);
         if (!targetNode.hasAttribute(SKIP_HYDRATION_ATTR_NAME)) {
-          annotateHostElementForHydration(targetNode, hostNode, parentDeferBlockId, context2);
+          annotateHostElementForHydration(targetNode, hostNode, parentDeferBlockId, context);
         }
       }
       ngh[CONTAINERS] ??= {};
-      ngh[CONTAINERS][noOffsetIndex] = serializeLContainer(lView[i], tNode, lView, parentDeferBlockId, context2);
+      ngh[CONTAINERS][noOffsetIndex] = serializeLContainer(lView[i], tNode, lView, parentDeferBlockId, context);
     } else if (Array.isArray(lView[i]) && !isLetDeclaration(tNode)) {
       const targetNode = unwrapRNode(lView[i][HOST]);
       if (!targetNode.hasAttribute(SKIP_HYDRATION_ATTR_NAME)) {
-        annotateHostElementForHydration(targetNode, lView[i], parentDeferBlockId, context2);
+        annotateHostElementForHydration(targetNode, lView[i], parentDeferBlockId, context);
       }
     } else {
       if (tNode.type & 8) {
@@ -28444,7 +27725,7 @@ function serializeLView(lView, parentDeferBlockId = null, context2) {
         }
       } else if (tNode.type & 1) {
         const rNode = unwrapRNode(lView[i]);
-        processTextNodeBeforeSerialization(context2, rNode);
+        processTextNodeBeforeSerialization(context, rNode);
       }
     }
     if (nativeElementsToEventTypes && tNode.type & 2) {
@@ -28473,14 +27754,14 @@ function componentUsesShadowDomEncapsulation(lView) {
   const def = getComponentDef(instance.constructor);
   return def?.encapsulation === ViewEncapsulation.ShadowDom || def?.encapsulation === ViewEncapsulation.ExperimentalIsolatedShadowDom;
 }
-function annotateHostElementForHydration(element, lView, parentDeferBlockId, context2) {
+function annotateHostElementForHydration(element, lView, parentDeferBlockId, context) {
   const renderer = lView[RENDERER];
   if (hasI18n(lView) && !isI18nHydrationSupportEnabled() || componentUsesShadowDomEncapsulation(lView)) {
     renderer.setAttribute(element, SKIP_HYDRATION_ATTR_NAME, "");
     return null;
   } else {
-    const ngh = serializeLView(lView, parentDeferBlockId, context2);
-    const index = context2.serializedViewCollection.add(ngh);
+    const ngh = serializeLView(lView, parentDeferBlockId, context);
+    const index = context.serializedViewCollection.add(ngh);
     renderer.setAttribute(element, NGH_ATTR_NAME, index.toString());
     return index;
   }
@@ -28503,10 +27784,10 @@ function isContentProjectedNode(tNode) {
   }
   return false;
 }
-function annotateDeferBlockRootNodesWithJsAction(tDetails, rootNodes, parentDeferBlockId, context2) {
+function annotateDeferBlockRootNodesWithJsAction(tDetails, rootNodes, parentDeferBlockId, context) {
   const actionList = convertHydrateTriggersToJsAction(tDetails.hydrateTriggers);
   for (let et of actionList) {
-    context2.eventTypesToReplay.regular.add(et);
+    context.eventTypesToReplay.regular.add(et);
   }
   if (actionList.length > 0) {
     const elementNodes = rootNodes.filter((rn) => rn.nodeType === Node.ELEMENT_NODE);
@@ -28890,11 +28171,7 @@ var REQUEST_CONTEXT = new InjectionToken(typeof ngDevMode === "undefined" || ngD
 });
 
 export {
-  __spreadValues,
-  __spreadProps,
-  __objRest,
   SIGNAL,
-  Subscription,
   pipe,
   Observable,
   Subject,
@@ -28905,7 +28182,6 @@ export {
   throwError,
   isObservable,
   EmptyError,
-  map,
   combineLatest,
   mergeMap,
   mergeAll,
@@ -29425,4 +28701,4 @@ export {
   RESPONSE_INIT,
   REQUEST_CONTEXT
 };
-//# sourceMappingURL=chunk-VKKTKCM2.js.map
+//# sourceMappingURL=chunk-UN5XAFGT.js.map

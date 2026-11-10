@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Episode } from '../../models/episode';
 
 @Component({
   selector: 'app-item-container',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './item-container.css',
 })
 export class ItemContainer {
+
+  @Input() episodeData!: Episode;
 
 }
