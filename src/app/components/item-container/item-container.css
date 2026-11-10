@@ -1,0 +1,27 @@
+.itemContainer {
+
+    padding-top: 18px;
+    padding-bottom: 8px;
+    padding-left: 4%;
+    padding-right: 4%;
+
+    margin-left: 15%;
+    margin-right: 15%;
+
+    border-radius: 8px;
+
+    text-align: left;
+
+    background-color: rgba(150,150,150,.15);
+
+    /* Blurring */
+    backdrop-filter: blur(30px) saturate(55%);
+    -webkit-backdrop-filter: blur(30px) saturate(55%); /* Safari support */
+
+    /* Layered highlights and shadows for depth */
+    box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.1);
+
+}
