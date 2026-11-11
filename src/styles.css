@@ -18,15 +18,19 @@ h1 {
 h2 {
     padding: 0;
     margin: 0;
+
+    font-size: 16pt;
 }
 
 h3 { 
     padding: 0;
     margin: 0;
+
+    font-size: 14pt;
 }
 
 p {
-    
+    font-size: 12.5pt;
 }
 
 .noPadding {
@@ -87,8 +91,8 @@ p {
 }
 
 .sectionContainer {
-    margin-left: 13%;
-    margin-right: 13%;
+    margin-left: 12%;
+    margin-right: 12%;
     display: flex;
 
     align-items: stretch;
@@ -106,7 +110,7 @@ p {
 .rightContainer {
     flex: 1 1 0;
     min-width: 0;
-    margin-left: 3%;
+    margin-left: 2%;
     border-radius: 14px;
 
     display: flex;
@@ -131,7 +135,14 @@ p {
     align-items: center;
     justify-content: center;
 
+    border-radius: 14px;
+}
+
+.sectionLabelContainer--tos {
     background-color: rgba(80,80,0,.5);
 
-    border-radius: 14px;
+}
+
+.sectionLabelContainer--tng {
+    background-color: rgba(80,0,0,.5);
 }

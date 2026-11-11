@@ -13,41 +13,47 @@
 </div>
 <br />
 
-<div class="sectionContainer">
-  <div class="leftContainer">
-    <div class="sectionLabelContainer glass verticalAlign">
-      <b>The Original Series</b>
-      <b>(TOS)</b>
-      <br />
-      <img src="/tos_logo.svg" class="seriesIcon" alt="Original Series logo" />
-    </div>
-  </div>
-  <div class="rightContainer">
-    <ng-container *ngFor="let episode of episodes">
-      <app-item-container *ngIf="episode.category === 'TOS Newcomer'" [episodeData]="episode"></app-item-container>
-    </ng-container>
-  </div>
+<div *ngIf="episodes.length === 0">
+  <h2>Loading episodes...</h2>
 </div>
 
-<br /><br />
+<div *ngIf="episodes.length > 0">
 
-<div class="sectionContainer">
-  <div class="leftContainer">
-    <div class="sectionLabelContainer glass verticalAlign">
-      <b>The Next Generation</b>
-      <b>(TNG)</b>
-      <br />
-      <img src="/tng_logo.webp" class="seriesIcon" alt="Original Series logo" />
+  <div class="sectionContainer">
+    <div class="leftContainer">
+      <div class="sectionLabelContainer glass verticalAlign sectionLabelContainer--tos">
+        <b>The Original Series</b>
+        <b>(TOS)</b>
+        <br />
+        <img src="/tos_logo.svg" class="seriesIcon" alt="Original Series logo" />
+      </div>
+    </div>
+    <div class="rightContainer">
+      <ng-container *ngFor="let episode of episodes">
+        <app-item-container *ngIf="episode.category === 'TOS Newcomer'" [episodeData]="episode"></app-item-container>
+      </ng-container>
     </div>
   </div>
-  <div class="rightContainer">
-    <app-item-container></app-item-container>
-    <app-item-container></app-item-container>
-    <app-item-container></app-item-container>
-    <app-item-container></app-item-container>
-    <app-item-container></app-item-container>
+
+  <br /><br />
+
+  <div class="sectionContainer">
+    <div class="leftContainer">
+      <div class="sectionLabelContainer glass verticalAlign sectionLabelContainer--tng">
+        <b>The Next Generation</b>
+        <b>(TNG)</b>
+        <br />
+        <img src="/tng_logo.webp" class="seriesIcon" alt="Next Generation logo" />
+      </div>
+    </div>
+    <div class="rightContainer">
+      <ng-container *ngFor="let episode of episodes">
+        <app-item-container *ngIf="episode.category === 'TNG Newcomer'" [episodeData]="episode"></app-item-container>
+      </ng-container>
+    </div>
   </div>
-</div>
+
+
 
 <br /><br /><br />
 

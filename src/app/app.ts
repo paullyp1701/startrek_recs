@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ItemContainer } from './components/item-container/item-container';
 import { DataImportService } from './data-import-service';
@@ -22,17 +22,22 @@ export class App implements OnInit {
 
   episodes: Episode[] = [];
 
-  constructor(private dataImportService: DataImportService) {}
+  constructor(
+    private dataImportService: DataImportService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
-    this.dataImportService.loadMediaData().subscribe(data => {
-
+    this.dataImportService.loadMediaData().subscribe({
+      next: (data) => {
         this.episodes = data;
+        console.log("EPISODES:", this.episodes);
 
-        console.log("App episodes:", this.episodes);
-        console.log("Third episode:", this.episodes[2]);
-
+        this.cdr.detectChanges();
+      },
+      error: (error) => {
+        console.error("CSV LOADING FAILED:", error);
+      }
     });
-
   }
 }

@@ -6,6 +6,7 @@ export interface Episode {
     seriesName: string;
     description: string;
     imdbLink: string;
+    imgSource: string;
     justification: string;
     comments: string;
 }

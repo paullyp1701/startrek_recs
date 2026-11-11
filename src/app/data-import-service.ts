@@ -36,8 +36,9 @@ export class DataImportService {
                         seriesName: values[4],
                         description: values[5],
                         imdbLink: values[6],
-                        justification: values[7],
-                        comments: values[8]
+                        imgSource: values[7],
+                        justification: values[8],
+                        comments: values[9]
 
                     } as Episode;
                 });

@@ -1,7 +1,23 @@
 <div class="itemContainer">
-  <h3>{{ episodeData?.title }}</h3>
-  <b>Season {{ episodeData?.season }} | Episode {{ episodeData?.episodeNumber }}</b>
-  <p><b>Description: </b>{{ episodeData?.description }}</p>
-  <i><b>Explanation: </b>{{ episodeData?.justification }}</i>
+
+  <a href="{{ episodeData?.imdbLink }}" class="itemImageContainer" target="_blank">
+    <div *ngIf="episodeData?.imgSource">
+      <img [src]="episodeData?.imgSource" alt="Episode image" />
+    </div>
+    <div *ngIf="!episodeData?.imgSource">
+      <img src="/missing.avif" alt="Episode image" />
+    </div>
+  </a>
+
+  <div class="itemInfoContainer">
+    <h2>{{ episodeData?.title }}</h2>
+    <h3>Season {{ episodeData?.season | number: '2.0' }} | Episode {{ episodeData?.episodeNumber }}</h3>
+    <!-- <p><b>Description: </b>{{ episodeData?.description }}</p> -->
+    <p>{{ episodeData?.description }}</p>
+    <p>
+      <!-- <b>Explanation: </b> -->
+      <i>{{ episodeData?.justification }}</i>
+    </p>
+  </div>
 
 </div>
