@@ -1,6 +1,6 @@
 <div class="itemContainer">
 
-  <a href="{{ episodeData?.imdbLink }}" class="itemImageContainer" target="_blank">
+  <a href="{{ episodeData?.imdbLink }}" class="desktopDisplay itemImageContainer" target="_blank">
     <div *ngIf="episodeData?.imgSource">
       <img [src]="episodeData?.imgSource" alt="Episode image" />
     </div>
@@ -11,9 +11,22 @@
 
   <div class="itemInfoContainer">
     <h2>{{ episodeData?.title }}</h2>
-    <h3>Season {{ episodeData?.season | number: '2.0' }} | Episode {{ episodeData?.episodeNumber }}</h3>
+    <ng-container *ngIf="episodeData.episodeNumber">
+      <h3>Season {{ episodeData?.season | number: '2.0' }} | Episode {{ episodeData?.episodeNumber }}</h3>
+    </ng-container>
+    <ng-container *ngIf="!episodeData.episodeNumber">
+      <h3>From {{ episodeData?.seriesName }}</h3>
+    </ng-container>
+
     <!-- <p><b>Description: </b>{{ episodeData?.description }}</p> -->
     <p>{{ episodeData?.description }}</p>
+
+    <a *ngIf="episodeData?.imgSource" href="{{ episodeData?.imdbLink }}" class="mobileDisplay itemImageContainer" target="_blank">
+      <div *ngIf="episodeData?.imgSource">
+        <img [src]="episodeData?.imgSource" alt="Episode image" />
+      </div>
+    </a>
+
     <p>
       <!-- <b>Explanation: </b> -->
       <i>{{ episodeData?.justification }}</i>
